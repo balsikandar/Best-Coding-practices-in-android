@@ -91,7 +91,7 @@
  ## Must follow rules
  
  ### Horizontal and vertical formatting rule
- It's not a constraint but a formatting rule that should be followed keep your code vertically and horizontally small so with just a one glance you can read it all.
+ It's not a constraint but a formatting rule that should be followed to keep your code vertically and horizontally small so with just one glance you can read it all.
  
  ### No comments
  "Code never lies, comments sometimes do." - **Ron Jeffries**
@@ -163,8 +163,23 @@
  - [Right way to implement Splash screen](#https://www.bignerdranch.com/blog/splash-screens-the-right-way/)
  - [Debugging Android Database and SharedPreferences](#https://medium.com/mindorks/debugging-android-databases-and-shared-preferences-in-the-easiest-way-e5f705dfc06b)
  - [How to become more productive in android with android studio plugins](https://medium.com/mindorks/how-to-become-more-productive-in-android-with-android-studio-plugins-3beb3861fa7)
+ - [Who lives and who dies](https://medium.com/google-developers/who-lives-and-who-dies-process-priorities-on-android-cb151f39044f)
+ - [VectorDrawable Adaptive Icons](https://medium.com/@ianhlake/vectordrawable-adaptive-icons-3fed3d3205b5)
+ - [How to be a Mock-star](https://medium.com/fueled-engineering/how-to-be-a-mock-star-fc00714d8c2f)
+ - [Why i studied full time for a google interview](https://medium.freecodecamp.org/why-i-studied-full-time-for-8-months-for-a-google-interview-cc662ce9bb13)
+ - [Picking your compileSdkVersion, minSdkVersion, and targetSdkVersion](https://medium.com/google-developers/picking-your-compilesdkversion-minsdkversion-targetsdkversion-a098a0341ebd)
+ - [Supercharging the Android WebView](https://medium.com/myntra-engineering/leveraging-native-power-in-webview-105d248fe71)
+ 
  
  ## High performance layouts
+ 
+ #### [Anko Layouts](https://github.com/Kotlin/anko/wiki/Anko-Layouts)
+ - XML layouts are somewhat slow and aren't typesafe or nullsafe
+ - Whereas Anko Layouts are [400% faster](https://android.jlelse.eu/400-faster-layouts-with-anko-da17f32c45dd) than XML layouts.
+ 
+ 
+ #### [Proteus](https://github.com/flipkart-incubator/proteus)
+ Uses json for layout creation ans as you'll know json parsing is faster than xml it improves layout performance.
  
  ## The coding principles
  
