@@ -160,8 +160,8 @@
  
  ## Some good articles
  
- - [Right way to implement Splash screen](#https://www.bignerdranch.com/blog/splash-screens-the-right-way/)
- - [Debugging Android Database and SharedPreferences](#https://medium.com/mindorks/debugging-android-databases-and-shared-preferences-in-the-easiest-way-e5f705dfc06b)
+ - [Right way to implement Splash screen](https://www.bignerdranch.com/blog/splash-screens-the-right-way/)
+ - [Debugging Android Database and SharedPreferences](https://medium.com/mindorks/debugging-android-databases-and-shared-preferences-in-the-easiest-way-e5f705dfc06b)
  - [How to become more productive in android with android studio plugins](https://medium.com/mindorks/how-to-become-more-productive-in-android-with-android-studio-plugins-3beb3861fa7)
  - [Who lives and who dies](https://medium.com/google-developers/who-lives-and-who-dies-process-priorities-on-android-cb151f39044f)
  - [VectorDrawable Adaptive Icons](https://medium.com/@ianhlake/vectordrawable-adaptive-icons-3fed3d3205b5)
