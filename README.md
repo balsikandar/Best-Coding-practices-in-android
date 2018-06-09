@@ -11,18 +11,19 @@
       * [Region](#region)
       * [Naming](#naming)
       * [Parameter Object pattern](#parameter-object-pattern)
+      * [No comments](#no-comments)
    * [Must follow rules](#must-follow-rules)
       * [Horizontal and vertical formatting rule](#horizontal-and-vertical-formatting-rule)
       * [Boy Scout rule](#boy-scout-rule)
+      * [Keep it simple rule](#keep-it-simple)
+      * [Consistency](#consistency)
    * [Must have android tools](#must-have-android-tools)
       * [SonarLint](#sonarlint)
       * [FindBugs](#findbugs)
+      * [Codota](#codota)
    * [Stupid mistakes by developers](#stupid-mistakes-by-developers)
-      * [Not using parcelable](#not-using-parcelable)
-      * [Directly accessing variables](#directly-accessing-variables)
-      * [Creating too many class variables](#creating-too-many-class-variables)
-      * [Integer.valueOf](#integer-valueof)
    * [Some good articles](#some-good-articles)
+   * [High performance layouts](#high-performance-layouts)   
    * [The coding principles](#the-coding-principles)
       * [SOLID](#solid)
       * [DRY principle](#dry-principle)
@@ -56,9 +57,9 @@
  if (vehicle == null || vehicle.getCar() == null || vehicle.getCar().getModel() == null) return;
   
  
- if (vehicle.getCar().getModel() != null) {
-     int price = vehicle.getCar().getModel().getPrice();
- }
+ 
+ int price = vehicle.getCar().getModel().getPrice();
+ 
  ```
  
  ### Cognitive complexity
@@ -76,18 +77,40 @@
  ```
  
  ### Naming
- Short names for short living variables and good and meaningful names for long living ones because they'll be with you for long-long time. They are family.
+ Short names for short living variables and good and meaningful names for long living ones because they'll be with you for a long-long time. They are family.
  ```
  For e.g. index variable within for loop can be 'i' but as class variable should be 'index'
  ```
  
- ### Parameter Object pattern
+ ### [Parameter Object pattern](https://refactoring.guru/introduce-parameter-object)
+ There is no restriction to number of paramters passed in methods but it's a bad practice to pass more than 3 or 4, So if your methods contains a repeating group of parameters which are passed among several methods. We can avoid that by replacing these parameters with an object.
+ 
+ ### Height and width constraint
+ 
  
  ## Must follow rules
  
  ### Horizontal and vertical formatting rule
+ It's not a constraint but a formatting rule that should be followed keep your code vertically and horizontally small so with just a one glance you can read it all.
+ 
+ ### No comments
+ "Code never lies, comments sometimes do." - **Ron Jeffries**
+ * Always try to explain yourself in code because you're a coder not a commenter.
+ * Don't add obvious noise.
+ * Add comments for Public APIs.
+ * Use it where necessary as time passes by code will change comment wouldn't.
+ * You're being paid for coding not commenting.
+ 
  
  ### Boy Scout rule
+ **Definition**: Leave the campground cleaner than you found it
+ 
+ ### Consistency
+ If you do something in one way then do it the same way everywhere- **Uncle Bob**
+ 
+ ### Keep it simple rule
+ Keep it simple stupid. Simpler is always better. Reduce complexity as much as possible - **Uncle Bob**
+ 
  
  ## Must have Android tools
  
@@ -97,20 +120,51 @@
  ### FindBugs
  It's a program that uses static code analysis to find bugs in java code just like SonarLint. To know more about FindBug check this. Flip a coin or whatever but pick one of these tools.
  
+ ### [Codota](https://www.codota.com/)
+ It's a great tool to help you with code segments that you might otherwise have to search on github and stackoverflow.
+ 
  ## Stupid mistakes by Developers
  
  ### Not using parcelable
+ If you're not using it then you're making a mistake. 
+ 
+ * Parcelable is designed for android.
+ * Parcelable is faster than serializable interface
+ * Parcelable interface takes more time for implemetation compared to serializable interface but there are plugins to automate it.
+ * Serializable interface is easier to implement
+ * Serializable interface create a lot of temporary objects and cause quite a bit of garbage collection
+ * Parcelable array can be pass via Intent in android
  
  ### Directly accessing variables
+ If you're accessing another class variables using dot operator it'll become ugly with time. There is a reason why we have access modifiers keep your variables private and se getters to access those variables.
+ 
+ This'll reduce code coupling. People who code in activity and fragments might know what i'm talking about.
  
  ### Creating too many class variables
+ If you still remember class as in OOPs concept class represents an entity a noun. A class has attributes which define it's states and methods it's behavior.
+ 
+ I have a totally different understanding from my experience I believe attributes are the real deal and methods they just work on it. So try to keep attributes which are relevant to class and trim those extra global variables(mostly booleans) you added for whatever reason.
+ 
+ Parameter object pattern can be of some help her.
+ 
  
  ### Integer.valueOf
+ Integer.valueOf returns `Integer` object whereas Integer.parseInt returns primitive `int`. Avoid using Objects for primitive types they're not meant for it.
+ 
+ ### Looping to add elements to arraylist
+ People there is addAll method in ArrayList use it for adding another list.
+ 
+ ### [Avoid overdraw](https://developer.android.com/topic/performance/rendering/overdraw)
+ In nested layouts we usually set `backgroundColor` property to ViewGroups without realising that it'll result in overdraw. This reduces your layouts performance. In Developer Options setting you can enable Overdraw to pinpoint your bad layouts.
+  
  
  ## Some good articles
  
  - [Right way to implement Splash screen](#https://www.bignerdranch.com/blog/splash-screens-the-right-way/)
  - [Debugging Android Database and SharedPreferences](#https://medium.com/mindorks/debugging-android-databases-and-shared-preferences-in-the-easiest-way-e5f705dfc06b)
+ - [How to become more productive in android with android studio plugins](https://medium.com/mindorks/how-to-become-more-productive-in-android-with-android-studio-plugins-3beb3861fa7)
+ 
+ ## High performance layouts
  
  ## The coding principles
  
@@ -122,7 +176,6 @@
  - Interface Segregation Principle
  - Dependency Inversion Principle
  
- For complete reference check.
  
  ### DRY principle
  Never ever write same piece of code twice make it your ironclad rule and strictly prohibit this in your kingdom.
@@ -132,11 +185,60 @@
  
  ## Must have Android Libraries
  
- ### Android Debug Database
+ ### [Android Debug Database](https://github.com/amitshekhariitbhu/Android-Debug-Database)
  
- ### Robin
+ Android Debug Database allows you to view databases and shared preferences directly in your browser in a very simple way.
+ 
+  #### What can Android Debug Database do?
+ * See all the databases.
+ * See all the data in the shared preferences used in your application.
+ * Run any sql query on the given database to update and delete your data.
+ * Directly edit the database values.
+ * Directly edit the shared preferences.
+ * Directly add a row in the database.
+ * Directly add a key-value in the shared preferences.
+ * Delete database rows and shared preferences.
+ * Search in your data.
+ * Sort data.
+ * Download database.
+ * Debug Room inMemory database.
+ 
+ ### [Robin](https://github.com/balsikandar/Robin)
+ 
  Robin is a logging library for Bundle data passed between Activities and fragments. It also provides a callback to send screen views of user visited pages to your analytics client
  
- ### Android studio plugins
+ ### [Android studio plugins](https://github.com/balsikandar/Android-Studio-Plugins)
  
  This is a list of all awesome and useful android studio plugins.
+
+
+
+### TODO
+Anything that improves code quality, improves it performance.
+### Find this project useful? :heart:
+* Support it by clicking the :star: button on the upper right of this page. :v:
+
+### Contact - Let's connect and share knowledge
+- [Twitter](https://twitter.com/balsikandar)
+- [Github](https://github.com/balsikandar)
+- [Medium](https://medium.com/@balsikandar.nsit)
+- [Facebook](https://www.facebook.com/balsikandar)
+
+### License
+
+   ```
+   Copyright (C) 2017 Bal Sikandar
+   Copyright (C) 2011 Android Open Source Project
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+   ```
