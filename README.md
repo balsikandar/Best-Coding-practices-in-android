@@ -134,7 +134,7 @@ public abstract class SimpleTabSelectedListener implements TabLayout.OnTabSelect
  #### FindBugs
  It's a program that uses static code analysis to find bugs in java code just like SonarLint. To know more about FindBug check this. Flip a coin or whatever but pick one of these tools.
  
- #### [Codota](#https://www.codota.com/)
+ #### [Codota](https://www.codota.com/)
  It's a great tool to help you with code segments that you might otherwise have to search on github and stackoverflow and it's totally available in your android studio.
  
  ## Stupid mistakes by Developers
@@ -214,7 +214,7 @@ public abstract class SimpleTabSelectedListener implements TabLayout.OnTabSelect
  
  ## Must have Android Libraries
  
- #### [Android Debug Database](#https://github.com/amitshekhariitbhu/Android-Debug-Database)
+ #### [Android Debug Database](https://github.com/amitshekhariitbhu/Android-Debug-Database)
  
  Android Debug Database allows you to view databases and shared preferences directly in your browser in a very simple way.
  
@@ -232,11 +232,11 @@ public abstract class SimpleTabSelectedListener implements TabLayout.OnTabSelect
  * Download database.
  * Debug Room inMemory database.
  
- #### [Robin](#https://github.com/balsikandar/Robin)
+ #### [Robin](https://github.com/balsikandar/Robin)
  
  Robin is a logging library for Bundle data passed between Activities and fragments. It also provides a callback to send screen views of user visited pages to your analytics client
  
- #### [Android studio plugins](#https://github.com/balsikandar/Android-Studio-Plugins)
+ #### [Android studio plugins](https://github.com/balsikandar/Android-Studio-Plugins)
  
  This is a list of all awesome and useful android studio plugins.
 
