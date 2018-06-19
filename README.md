@@ -135,7 +135,7 @@ public abstract class SimpleTabSelectedListener implements TabLayout.OnTabSelect
  I recommend this, i have been using it and i got to know about this from a colleague, sometimes they can be helpful, kidding. It has several features best one to just scan the modified classes and it'll automatically criticise you for your bad code and how ugly you can be sometimes. BTW **Cognitive complexity** we talked earlier it helps.
  
  #### FindBugs
- It's a program that uses static code analysis to find bugs in java code just like SonarLint. To know more about FindBug check this. Flip a coin or whatever but pick one of these tools.
+ It's a program that uses static code analysis to find bugs in java code just like SonarLint. To know more about FindBug check [this](https://medium.com/mindorks/static-code-analysis-for-android-using-findbugs-pmd-and-checkstyle-3a2861834c6a). Flip a coin or whatever but pick one of these tools.
  
  #### [Codota](https://www.codota.com/)
  It's a great tool to help you with code segments that you might otherwise have to search on github and stackoverflow and it's totally available in your android studio.
@@ -153,16 +153,16 @@ public abstract class SimpleTabSelectedListener implements TabLayout.OnTabSelect
  * Parcelable array can be pass via Intent in android
  
  #### Directly accessing variables
- If you're accessing another class variables using dot operator it'll become ugly with time. There is a reason why we have access modifiers keep your variables private and se getters to access those variables.
+ If you're accessing another class variables using dot operator it'll become ugly with time. There is a reason why we have access modifiers keep your variables private and use getters to access those variables.
  
  This'll reduce code coupling. People who code in activity and fragments might know what i'm talking about.
  
  #### Creating too many class variables
  If you still remember class as in OOPs concept class represents an entity a noun. A class has attributes which define it's states and methods it's behavior.
  
- I have a totally different understanding from my experience I believe attributes are the real deal and methods they just work on it. So try to keep attributes which are relevant to class and trim those extra global variables(mostly booleans) you added for whatever reason.
+ I have a totally different understanding from my experience I believe attributes are the real deal and methods they just work on it. So try to keep attributes which are relevant to class and trim those extra global variables you added for whatever reason.
  
- Parameter object pattern can be of some help her.
+ Parameter object pattern can be of some help here.
  
  
  #### Integer.valueOf
@@ -172,7 +172,7 @@ public abstract class SimpleTabSelectedListener implements TabLayout.OnTabSelect
  People there is addAll method in ArrayList use it for adding another list.
  
  #### [Avoid overdraw](https://developer.android.com/topic/performance/rendering/overdraw)
- In nested layouts we usually set `backgroundColor` property to ViewGroups without realising that it'll result in overdraw. This reduces your layouts performance. In Developer Options setting you can enable Overdraw to pinpoint your bad layouts.
+ In nested layouts we usually set `backgroundColor` property to every other ViewGroups without realising that it'll result in overdraw. This reduces your layouts performance. In Developer Options setting you can enable Overdraw to pinpoint your bad layouts.
   
  
  ## Some good articles
@@ -192,11 +192,11 @@ public abstract class SimpleTabSelectedListener implements TabLayout.OnTabSelect
  
  #### [Anko Layouts](https://github.com/Kotlin/anko/wiki/Anko-Layouts)
  - XML layouts are somewhat slow and aren't typesafe or nullsafe
- - Whereas Anko Layouts are [400% faster](https://android.jlelse.eu/400-faster-layouts-with-anko-da17f32c45dd) than XML layouts.
+ - Anko Layouts are [400% faster](https://android.jlelse.eu/400-faster-layouts-with-anko-da17f32c45dd) than XML layouts.
  
  
  #### [Proteus](https://github.com/flipkart-incubator/proteus)
- Uses json for layout creation ans as you'll know json parsing is faster than xml it improves layout performance.
+ Uses json for layout creation as you'll know json parsing is faster than xml it improves layout performance.
  
  ## The coding principles
  
@@ -213,7 +213,7 @@ public abstract class SimpleTabSelectedListener implements TabLayout.OnTabSelect
  Never ever write same piece of code twice make it your ironclad rule and strictly prohibit this in your kingdom.
  
  #### The Critics principle
- Okay it's totally made up but it's very logical. When you're reviewing code of your teammates don't be a friend, Be their arch enemy, don't let them make mistakes that you might have to clean someday. Cleaning other's shit will make your hand dirty. Enforce good practices in code reviews.
+ Okay it's totally made up but it's very logical. When you're reviewing code of your teammates, don't be a friend, Be their arch enemy, don't let them make mistakes that you might have to clean someday. Cleaning other's shit will only make your hand dirty. Enforce good practices in code reviews.
  
  ## Must have Android Libraries
  
@@ -244,9 +244,9 @@ public abstract class SimpleTabSelectedListener implements TabLayout.OnTabSelect
  This is a list of all awesome and useful android studio plugins.
 
 
-
 ### TODO
 Anything that improves code quality, improves it performance.
+
 ### Find this project useful? :heart:
 * Support it by clicking the :star: button on the upper right of this page. :v:
 
